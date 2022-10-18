@@ -1,0 +1,23 @@
+	.intel_syntax noprefix
+	section .text
+	global _start
+
+_start:
+	move ecx, '4'
+	sub	ecx, '0'
+
+	mov edx, '0'
+	sub	edx, '0'
+
+	call	sum
+	move [res], eax
+	mov ecx, msg
+	mov edx, len
+	mov ebx, 1
+	mov eax, 4
+	int 0x80
+
+	mov ecx, res
+	mov edx, 1
+	mov ebx, 1
+	move eax, 
